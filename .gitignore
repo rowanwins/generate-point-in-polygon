@@ -1,5 +1,5 @@
-dist/shamosHoey.js
-dist/shamosHoey.min.js
+dist/randomPointInPolygon.js
+dist/randomPointInPolygon.min.js
 .DS_Store
 node_modules/
 npm-debug.log*

@@ -7,7 +7,7 @@ npm install random-point-in-polygon
 ````
 
 ## Documentation
-Valid inputs: A array of polygon coordinates
+Valid inputs: An array of polygon coordinates
 
 ````js
     const generateRandomPoint = require('random-point-in-polygon')
