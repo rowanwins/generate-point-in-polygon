@@ -2,7 +2,7 @@ import isClockwise from 'is-clockwise'
 import isInside from 'point-in-polygon'
 // import { debugConvexAngle } from './debug'
 
-export default function randomPointInPoly (contour, indexOfConvexVertice) {
+export default function generatePointInPoly (contour, indexOfConvexVertice) {
     let x = indexOfConvexVertice ? indexOfConvexVertice : 0
     if (x === 0) {
         const isContourClockwise = isClockwise(contour)

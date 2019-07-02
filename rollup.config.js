@@ -5,7 +5,7 @@ import {terser} from 'rollup-plugin-terser'
 const output = (file, plugins) => ({
     input: './src/main.js',
     output: {
-        name: 'randomPointInPolygon',
+        name: 'generatePointInPolygon',
         file,
         format: 'umd',
         exports: 'default'
@@ -14,11 +14,11 @@ const output = (file, plugins) => ({
 })
 
 export default [
-    output('./dist/randomPointInPolygon.js', [
+    output('./dist/generatePointInPolygon.js', [
         commonjs(),
         resolve()
     ]),
-    output('./dist/randomPointInPolygon.min.js', [
+    output('./dist/generatePointInPolygon.min.js', [
         commonjs(),
         resolve(),
         terser()

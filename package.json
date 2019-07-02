@@ -1,11 +1,11 @@
 {
-  "name": "random-point-in-polygon",
-  "version": "0.0.4",
-  "description": "A module to generate a random point in a polygon",
-  "main": "dist/randomPointInPolygon.js",
+  "name": "generate-point-in-polygon",
+  "version": "0.0.1",
+  "description": "A module to generate a point in a polygon",
+  "main": "dist/generatePointInPolygon.js",
   "module": "src/main.js",
-  "unpkg": "dist/randomPointInPolygon.min.js",
-  "jsdelivr": "dist/randomPointInPolygon.min.js",
+  "unpkg": "dist/generatePointInPolygon.min.js",
+  "jsdelivr": "dist/generatePointInPolygon.min.js",
   "scripts": {
     "bench": "npm run build && node test/benchmark.js",
     "build": "rollup -c",

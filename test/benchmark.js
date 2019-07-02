@@ -1,6 +1,6 @@
 const path = require('path')
 const Benchmark = require('benchmark')
-const randomPointInPolygon = require('../dist/randomPointInPolygon.js')
+const generatePoint = require('../dist/generatePointInPolygon.js')
 const pointOnFeature = require('@turf/point-on-feature')
 const loadJsonFile = require('load-json-file')
 
@@ -23,8 +23,8 @@ const options = {
 // - Fastest is randomPointInPolygon
 const suite = new Benchmark.Suite('Switzerland', options)
 suite
-    .add('randomPointInPolygon', function () {
-        randomPointInPolygon(switzerland.geometry.coordinates[0])
+    .add('generate-point-in-polygon', function () {
+        generatePoint(switzerland.geometry.coordinates[0])
     })
     .add('turf point-on-feature', function () {
         pointOnFeature(switzerland)
@@ -37,8 +37,8 @@ suite
 // - Fastest is randomPointInPolygon
 const suite1 = new Benchmark.Suite('Switzerland with convex identified', options)
 suite1
-    .add('randomPointInPolygon', function () {
-        randomPointInPolygon(switzerland.geometry.coordinates[0], 745)
+    .add('generate-point-in-polygon', function () {
+        generatePoint(switzerland.geometry.coordinates[0], 745)
     })
     .add('turf point-on-feature', function () {
         pointOnFeature(switzerland)
@@ -51,8 +51,8 @@ suite1
 // - Fastest is randomPointInPolygon
 const suite2 = new Benchmark.Suite('Simple Case', options)
 suite2
-    .add('randomPointInPolygon', function () {
-        randomPointInPolygon(spike.geometry.coordinates[0])
+    .add('generate-point-in-polygon', function () {
+        generatePoint(spike.geometry.coordinates[0])
     })
     .add('turf point-on-feature', function () {
         pointOnFeature(spike)
