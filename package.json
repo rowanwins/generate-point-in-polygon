@@ -1,6 +1,6 @@
 {
   "name": "random-point-in-polygon",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A module to generate a random point in a polygon",
   "main": "dist/randomPointInPolygon.js",
   "module": "src/main.js",
