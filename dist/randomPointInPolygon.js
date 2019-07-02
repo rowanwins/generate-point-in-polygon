@@ -33,7 +33,17 @@
         return inside;
     };
 
-    // import { debugConvexAngle } from './debug'
+    function debugConvexAngle (p1, p2, p3) {
+        if (process.env.NODE_ENV !== 'development') return
+        const map = window.map;
+        const points = L.layerGroup([]).addTo(map);
+
+        L.circleMarker([p1[1], p1[0]], {color: 'red', radius: 10}).addTo(points);
+        L.circleMarker([p2[1], p2[0]], {color: 'orange', radius: 6}).addTo(points);
+        L.circleMarker([p3[1], p3[0]], {color: 'yellow', radius: 3}).addTo(points);
+        debugger
+        points.clearLayers();
+    }
 
     function randomPointInPoly (contour, indexOfConvexVertice) {
         let x = indexOfConvexVertice ? indexOfConvexVertice : 0;
@@ -52,12 +62,12 @@
         }
 
         const triangle = [contour[x], contour[x + 1], contour[x + 2]];
-        // debugConvexAngle(contour[x], contour[x + 1], contour[x + 2])
+        debugConvexAngle(contour[x], contour[x + 1], contour[x + 2]);
 
         let closestPointIndex = null;
         let closestDistance = Infinity;
 
-        for (let xx = 0; xx < contour.length - 1; xx++) {
+        for (let xx = 1; xx < contour.length - 1; xx++) {
             if (xx === x + 1) continue
             if (pointInPolygon(contour[xx], triangle)) {
                 const dist = distance(contour[x + 1], contour[xx]);

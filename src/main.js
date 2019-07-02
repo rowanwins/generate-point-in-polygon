@@ -1,6 +1,6 @@
 import isClockwise from 'is-clockwise'
 import isInside from 'point-in-polygon'
-// import { debugConvexAngle } from './debug'
+import { debugConvexAngle } from './debug'
 
 export default function randomPointInPoly (contour, indexOfConvexVertice) {
     let x = indexOfConvexVertice ? indexOfConvexVertice : 0
@@ -19,12 +19,12 @@ export default function randomPointInPoly (contour, indexOfConvexVertice) {
     }
 
     const triangle = [contour[x], contour[x + 1], contour[x + 2]]
-    // debugConvexAngle(contour[x], contour[x + 1], contour[x + 2])
+    debugConvexAngle(contour[x], contour[x + 1], contour[x + 2])
 
     let closestPointIndex = null
     let closestDistance = Infinity
 
-    for (let xx = 0; xx < contour.length - 1; xx++) {
+    for (let xx = 1; xx < contour.length - 1; xx++) {
         if (xx === x + 1) continue
         if (isInside(contour[xx], triangle)) {
             const dist = distance(contour[x + 1], contour[xx])

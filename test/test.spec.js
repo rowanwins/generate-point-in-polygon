@@ -13,7 +13,12 @@ test('fixtures', (t) => {
     fixtures.forEach((filepath) => {
         const geojson = load.sync(filepath);
         const p = randomPointInPoly(geojson.geometry.coordinates[0])
-        console.log(p)
         t.true((isInside(p, geojson.geometry.coordinates[0])));
     });
+})
+
+test('test pre-seeded concave vertice', (t) => {
+    const switzerland = load.sync(path.join(__dirname, 'fixtures', 'switzerland.geojson'))
+    const p = randomPointInPoly(switzerland.geometry.coordinates[0], 745)
+    t.true((isInside(p, switzerland.geometry.coordinates[0])));
 })

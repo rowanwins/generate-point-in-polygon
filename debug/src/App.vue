@@ -19,7 +19,7 @@ L.Icon.Default.mergeOptions({
     shadowUrl: markerShadow
 })
 
-const trouble = require('../../test/fixtures/indented.geojson')
+const trouble = require('../../test/fixtures/another.geojson')
 
 export default {
     name: 'App',
